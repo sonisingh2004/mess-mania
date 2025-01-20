@@ -96,5 +96,6 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "editor.fontSize": 12
 }

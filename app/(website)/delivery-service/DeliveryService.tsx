@@ -108,14 +108,11 @@ const DeliveryService = () => {
               View Menu
             </Button>
           </Link>
-
           <Button
-            variant="outline"
-            size="lg"
-            className="rounded-none px-6 py-6 border-white text-white hover:bg-white hover:text-black min-w-[150px]"
-          >
-            Subscribe Now
-          </Button>
+            variant='outline'
+            className='px-6 py-6 rounded-none bg-transparent border-white text-white hover:bg-white hover:text-black'
+          >Subscribe Now</Button>
+
         </motion.div>
       </div>
     </section>

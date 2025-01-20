@@ -1,9 +1,10 @@
-import Home from './Home'
+'use client'
+
 
 const page = () => {
   return (
     <div>
-      <Home/>
+      test
     </div>
   )
 }

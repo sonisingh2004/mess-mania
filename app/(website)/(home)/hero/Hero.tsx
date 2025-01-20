@@ -1,5 +1,5 @@
 // pages/index.js
-import AnimatedText from '@/app/animations/AnimatedText';
+import AnimatedText from '@/app/(website)/animations/AnimatedText';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';

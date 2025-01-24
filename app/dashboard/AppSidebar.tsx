@@ -1,6 +1,6 @@
 
 import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { Bell, CalendarDays, CircleUserRound, Home, Mail, Settings } from "lucide-react"
+import { Bell, CircleUserRound, Clock, CreditCard, Settings, ShoppingCart, User } from "lucide-react"
 
 import {
   Sidebar,
@@ -18,19 +18,24 @@ import {
 
 const mainNavItems = [
   {
-    title: "Home",
-    icon: Home,
-    url: "/dashboard",
+    title: "User Info",
+    icon: User,
+    url: "/dashboard/userInfo",
   },
   {
-    title: "Messages",
-    icon: Mail,
-    url: "/dashboard/messages",
+    title: "Orders",
+    icon: ShoppingCart,
+    url: "/dashboard/orders",
   },
   {
-    title: "Calendar",
-    icon: CalendarDays,
-    url: "/dashboard/calendar",
+    title: "Payment History",
+    icon: CreditCard,
+    url: "/dashboard/payment",
+  },
+  {
+    title: "Analytics",
+    icon: Clock,
+    url: "/dashboard/analytics",
   },
   {
     title: "Notifications",
@@ -44,7 +49,7 @@ export function AppSidebar() {
     <Sidebar className="sidebar">
       <SidebarHeader>
         <SidebarGroup>
-          <SidebarGroupLabel className="sidebar-group-label">MessMania</SidebarGroupLabel>
+          <SidebarGroupLabel className="sidebar-group-label font-dancing text-4xl font-bold text-[#FF6F30]">MessMania</SidebarGroupLabel>
         </SidebarGroup>
       </SidebarHeader>
       <SidebarSeparator />
@@ -57,7 +62,7 @@ export function AppSidebar() {
                   <SidebarMenuButton className="sidebar-menu-button" asChild>
                     <a href={item.url}>
                       <item.icon className="h-5 w-5" />
-                      <span>{item.title}</span>
+                      <span className="text-md">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

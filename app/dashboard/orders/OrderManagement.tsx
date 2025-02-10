@@ -1,56 +1,62 @@
-
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+'use client';
+import { ShoppingCart } from "lucide-react";
+import { useState } from "react";
 
 const OrderManagement = () => {
-  const orders = [
+  const [orders, setOrders] = useState([
     {
       id: 'ORD001',
       date: '2024-01-20',
-      items: 'Vegetarian Thali, Butter Chicken',
+      items: ['Vegetarian Thali', 'Butter Chicken'],
+      total: 350,
+      status: 'Delivered'
+    },
+    {
+      id: 'ORD001',
+      date: '2024-01-20',
+      items: ['Vegetarian Thali', 'Butter Chicken'],
       total: 350,
       status: 'Delivered'
     }
-  ];
+  ]);
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Order Management</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table className="w-full border-collapse">
-          <TableHead>
-            <TableRow>
-              <TableCell className="p-3 border-b font-medium text-left">Order ID</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Date</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Items</TableCell>
-              <TableCell className="p-3 border-b font-medium text-right">Total</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
+    <div className="p-6 bg-gray-100 md:w-[80vw]">
+      <h1 className="text-2xl font-bold mb-6 flex items-center">
+        <ShoppingCart className="mr-2" /> Order Management
+      </h1>
+      <div className="bg-white shadow-md rounded-lg">
+        <table className="w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="p-4 text-left">Order ID</th>
+              <th className="p-4 text-left">Date</th>
+              <th className="p-4 text-left">Items</th>
+              <th className="p-4 text-left">Total</th>
+              <th className="p-4 text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody>
             {orders.map((order) => (
-              <TableRow key={order.id}>
-                <TableCell className="p-3 border-b">{order.id}</TableCell>
-                <TableCell className="p-3 border-b">{order.date}</TableCell>
-                <TableCell className="p-3 border-b">{order.items}</TableCell>
-                <TableCell className="p-3 border-b text-right">₹{order.total}</TableCell>
-                <TableCell className="p-3 border-b">
-                  <Badge
-                    // variant={order.status === 'Delivered' ? 'green' : 'gray'}
-                    className="font-medium"
-                  >
+              <tr key={order.id} className="border-b hover:bg-gray-50">
+                <td className="p-4">{order.id}</td>
+                <td className="p-4">{order.date}</td>
+                <td className="p-4">{order.items.join(', ')}</td>
+                <td className="p-4">₹{order.total}</td>
+                <td className="p-4">
+                  <span className={`px-2 py-1 rounded ${order.status === 'Delivered'
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-yellow-100 text-yellow-800'
+                    }`}>
                     {order.status}
-                  </Badge>
-                </TableCell>
-              </TableRow>
+                  </span>
+                </td>
+              </tr>
             ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

@@ -34,13 +34,16 @@ export default function Hero() {
                   View Menu
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                className=" border-[#FF5722] text-[#FF5722] hover:bg-[#FF6F30] rounded-none hover:text-white text-md font-light px-6 py-6"
-                size="lg"
-              >
-                Subscribe Now
-              </Button>
+              <a href="tel:+918986815104">
+                <Button
+                  variant="outline"
+                  className=" border-[#FF5722] text-[#FF5722] hover:bg-[#FF6F30] rounded-none hover:text-white text-md font-light px-6 py-6"
+                  size="lg"
+                >
+                  Call Now
+                </Button>
+              </a>
+
             </div>
           </div>
 

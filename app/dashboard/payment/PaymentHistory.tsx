@@ -1,9 +1,9 @@
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+'use client';
+import { CreditCard } from "lucide-react";
+import { useState } from "react";
 
 const PaymentHistory = () => {
-  const payments = [
+  const [payments, setPayments] = useState([
     {
       id: 'PAY001',
       date: '2024-01-20',
@@ -12,52 +12,51 @@ const PaymentHistory = () => {
       status: 'Completed'
     },
     {
-      id: 'PAY002',
+      id: 'PAY001',
       date: '2024-01-20',
       amount: 350,
       method: 'Credit Card',
-      status: 'Completed'
-    }
-  ];
+      status: 'pending'
+    },
+  ]);
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Payment History</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table className="w-full border-collapse">
-          <TableHead>
-            <TableRow>
-              <TableCell className="p-3 border-b font-medium text-left">Payment ID</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Date</TableCell>
-              <TableCell className="p-3 border-b font-medium text-right">Amount</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Method</TableCell>
-              <TableCell className="p-3 border-b font-medium text-left">Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
+    <div className="p-6 bg-gray-100 md:w-[80vw]">
+      <h1 className="text-2xl font-bold mb-6 flex items-center">
+        <CreditCard className="mr-2" /> Payment History
+      </h1>
+      <div className="bg-white shadow-md rounded-lg">
+        <table className="w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="p-4 text-left">Payment ID</th>
+              <th className="p-4 text-left">Date</th>
+              <th className="p-4 text-left">Amount</th>
+              <th className="p-4 text-left">Method</th>
+              <th className="p-4 text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody>
             {payments.map((payment) => (
-              <TableRow key={payment.id}>
-                <TableCell className="p-3 border-b">{payment.id}</TableCell>
-                <TableCell className="p-3 border-b">{payment.date}</TableCell>
-                <TableCell className="p-3 border-b text-right">₹{payment.amount}</TableCell>
-                <TableCell className="p-3 border-b">{payment.method}</TableCell>
-                <TableCell className="p-3 border-b">
-                  <Badge
-                    // variant={payment.status === 'Completed' ? 'green' : 'gray'}
-                    className="font-medium"
-                  >
+              <tr key={payment.id} className="border-b hover:bg-gray-50">
+                <td className="p-4">{payment.id}</td>
+                <td className="p-4">{payment.date}</td>
+                <td className="p-4">₹{payment.amount}</td>
+                <td className="p-4">{payment.method}</td>
+                <td className="p-4">
+                  <span className={`px-2 py-1 rounded ${payment.status === 'Completed'
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800'
+                    }`}>
                     {payment.status}
-                  </Badge>
-                </TableCell>
-              </TableRow>
+                  </span>
+                </td>
+              </tr>
             ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
-
 export default PaymentHistory;

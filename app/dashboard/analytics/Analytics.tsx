@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PieChart } from 'lucide-react';
 
 
 
@@ -19,50 +19,31 @@ const AnalyticsDashboard = () => {
   ];
 
   return (
-    <Card className=" w-[90vw] md:w-[80vw]">
-      <CardHeader>
-        <CardTitle>Analytics Dashboard</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-          <div>
-            <h3 className="text-lg font-medium mb-2">Order Metrics</h3>
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <span>Total Orders:</span>
-                <span>{orderMetrics[0].totalOrders}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Monthly Revenue:</span>
-                <span>₹{orderMetrics[0].monthlyRevenue}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Average Order Value:</span>
-                <span>₹{orderMetrics[0].averageOrderValue}</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-lg font-medium mb-2">User Metrics</h3>
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <span>Total Users:</span>
-                <span>{userMetrics[0].totalUsers}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>New Users this Month:</span>
-                <span>{userMetrics[0].newUsersThisMonth}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Retention Rate:</span>
-                <span>{userMetrics[0].retentionRate}%</span>
-              </div>
-            </div>
+    <div className="p-6 bg-gray-100 md:w-[80vw]">
+      <h1 className="text-2xl font-bold mb-6 flex items-center">
+        <PieChart className="mr-2" /> Analytics Dashboard
+      </h1>
+      <div className="grid grid-cols-1 gap-6">
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Order Metrics</h2>
+          <div className="space-y-2">
+            <div>Total Orders:{orderMetrics[0].totalOrders}</div>
+            <div>Monthly Revenue:₹{orderMetrics[0].monthlyRevenue}</div>
+            <div>Average Order Value:₹{orderMetrics[0].averageOrderValue}</div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">User Metrics</h2>
+          <div className="space-y-2">
+            <div>Total Users:{userMetrics[0].totalUsers}</div>
+            <div>New Users this Month:{userMetrics[0].newUsersThisMonth}</div>
+            <div>Retention Rate:{userMetrics[0].retentionRate}%</div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
+
 };
 
 export default AnalyticsDashboard;

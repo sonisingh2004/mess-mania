@@ -14,26 +14,26 @@ const Header = () => {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/menu" 
+            <Link
+              href="/menu"
               className="text-gray-900 hover:text-[#FF6F30] transition-colors"
             >
               Menu
             </Link>
-            <Link 
-              href="/subscription-plans" 
+            <Link
+              href="/subscription-plans"
               className="text-gray-900 hover:text-[#FF6F30] transition-colors"
             >
               Subscription Plans
             </Link>
-            <Link 
-              href="/testimonials" 
+            <Link
+              href="/testimonials"
               className="text-gray-900 hover:text-[#FF6F30] transition-colors"
             >
               Testimonials
             </Link>
-            <Link 
-              href="/contact-us" 
+            <Link
+              href="/contact-us"
               className="text-gray-900 hover:text-[#FF6F30] transition-colors"
             >
               Contact Us
@@ -42,23 +42,26 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              className="py-6 px-6 font-light border-[#FF5722] text-[#FF5722] hover:bg-[#FF6F30] rounded-none hover:text-white"
-            >
-              Order Now
-            </Button>
+            <Link href={"/orderNow"}>
+              <Button
+                variant="outline"
+                className="py-6 px-6 font-light border-[#FF5722] text-[#FF5722] hover:bg-[#FF6F30] rounded-none hover:text-white"
+              >
+                Order Now
+              </Button>
+            </Link>
+
             <Link href={"/menu"}>
-            <Button 
-              className="py-6 px-6 font-light bg-[#FF6F30] text-white hover:bg-[#FF8C59] rounded-none"
-            >
-              View Menu
-            </Button>
-            </Link>     
+              <Button
+                className="py-6 px-6 font-light bg-[#FF6F30] text-white hover:bg-[#FF8C59] rounded-none"
+              >
+                View Menu
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button - Only visible on mobile */}
-          <Button 
+          <Button
             variant="ghost"
             className="md:hidden"
             size="icon"

@@ -1,6 +1,6 @@
 
 import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { Bell, CircleUserRound, Clock, CreditCard, Settings, ShoppingCart, User } from "lucide-react"
+import { Bell, CircleUserRound, Clock, CreditCard, Phone, Settings, ShoppingCart, User } from "lucide-react"
 
 import {
   Sidebar,
@@ -26,6 +26,11 @@ const mainNavItems = [
     title: "Orders",
     icon: ShoppingCart,
     url: "/dashboard/orders",
+  },
+  {
+    title: "Order via Call",
+    icon: Phone,
+    url: "/dashboard/phoneOrder",
   },
   {
     title: "Payment History",

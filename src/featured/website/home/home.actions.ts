@@ -1,6 +1,6 @@
-import db from '@src/lib/db/index.ts'
+import db from "@/lib/db"
 
 // Get All Users
-const getAllUsers = () => {
-return db.users.find()
+export const getAllUsers = () => {
+  return db.query.users.findMany()
 }

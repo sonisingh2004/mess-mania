@@ -1,13 +1,12 @@
-import { env } from '@/lib/index.config';
-import * as schema from '@/shared/db/schema';
 import { drizzle } from 'drizzle-orm/postgres-js';
+import * as schema from './schema';
 
 const db = drizzle({
-  schema,
+  schema: schema,
   casing: 'snake_case',
   logger: true,
   connection: {
-    url:  process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL,
     max: 50,
     idle_timeout: 20,
     keep_alive: 10,

@@ -89,7 +89,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[postcss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

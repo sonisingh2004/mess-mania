@@ -18,8 +18,8 @@ const Contacts = () => {
         {/* Left Column - Contact Info */}
         <div>
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-lg text-gray-900 mb-8">
-            We'd love to hear from you! Reach out anytime.
+          <p className="text-lg text-gray-700">
+            We&apos;d love to hear from you. Please feel free to reach out with any questions or concerns.
           </p>
 
           <div className="space-y-2">

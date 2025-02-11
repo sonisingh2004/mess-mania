@@ -2,8 +2,16 @@
 import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
 
+interface Order {
+  id: string;
+  date: string;
+  items: string[];
+  total: number;
+  status: 'Delivered' | 'Pending';
+}
+
 const OrderManagement = () => {
-  const [orders, setOrders] = useState([
+  const [orders] = useState<Order[]>([
     {
       id: 'ORD001',
       date: '2024-01-20',
@@ -12,7 +20,7 @@ const OrderManagement = () => {
       status: 'Delivered'
     },
     {
-      id: 'ORD001',
+      id: 'ORD002',
       date: '2024-01-20',
       items: ['Vegetarian Thali', 'Butter Chicken'],
       total: 350,

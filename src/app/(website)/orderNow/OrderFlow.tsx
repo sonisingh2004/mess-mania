@@ -4,10 +4,19 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ChevronRight, Clock, MapPin, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
+
+interface Meal {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
 
 const OrderFlow = () => {
   const [step, setStep] = useState(1);
-  const [cart, setCart] = useState<any[]>([]);
+  const [cart, setCart] = useState<Meal[]>([]);
   const [orderDetails, setOrderDetails] = useState({
     name: '',
     phone: '',
@@ -15,7 +24,7 @@ const OrderFlow = () => {
     landmark: ''
   });
 
-  const meals = [
+  const meals: Meal[] = [
     {
       id: 1,
       name: 'North Indian Thali',
@@ -32,11 +41,11 @@ const OrderFlow = () => {
     }
   ];
 
-  const addToCart = (meal: any) => {
+  const addToCart = (meal: Meal) => {
     setCart([...cart, meal]);
   };
 
-  const removeFromCart = (mealId: any) => {
+  const removeFromCart = (mealId: number) => {
     setCart(cart.filter(item => item.id !== mealId));
   };
 
@@ -58,13 +67,16 @@ const OrderFlow = () => {
     // Add your order submission logic here
   };
 
-  const renderMealCard = (meal: { id: any; name: any; price: any; description: any; image: any; }) => (
+  const renderMealCard = (meal: Meal) => (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
-      <img
-        src={meal.image}
-        alt={meal.name}
-        className="w-full h-48 object-cover"
-      />
+      <div className="relative w-full h-48">
+        <Image
+          src={meal.image}
+          alt={meal.name}
+          fill
+          className="object-cover"
+        />
+      </div>
       <CardContent className="p-4">
         <div className="flex justify-between items-start mb-2">
           <div>

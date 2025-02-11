@@ -2,8 +2,16 @@
 import { CreditCard } from "lucide-react";
 import { useState } from "react";
 
+interface Payment {
+  id: string;
+  date: string;
+  amount: number;
+  method: string;
+  status: 'Completed' | 'pending';
+}
+
 const PaymentHistory = () => {
-  const [payments, setPayments] = useState([
+  const [payments] = useState<Payment[]>([
     {
       id: 'PAY001',
       date: '2024-01-20',
@@ -12,7 +20,7 @@ const PaymentHistory = () => {
       status: 'Completed'
     },
     {
-      id: 'PAY001',
+      id: 'PAY002',
       date: '2024-01-20',
       amount: 350,
       method: 'Credit Card',

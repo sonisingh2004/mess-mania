@@ -6,6 +6,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 const orderingSteps = [
   {
@@ -29,10 +31,10 @@ const OrderSection = () => {
           </h2>
           <div className="w-[850px]">
             <p className="text-lg text-black">
-            Discover how our simple online ordering system and flexible subscription plans work to bring 
-            you delicious meals effortlessly.
-          </p>
-          </div>  
+              Discover how our simple online ordering system and flexible subscription plans work to bring
+              you delicious meals effortlessly.
+            </p>
+          </div>
         </div>
         {/* Accordion */}
         <Accordion type="single" collapsible className="mb-12">
@@ -56,12 +58,14 @@ const OrderSection = () => {
           <p className="text-lg text-gray-700">
             Join us for a hassle-free meal delivery experience.
           </p>
-          <Button 
-            size="lg"
-            className=" font-normal rounded-none px-6 py-6 bg-[#FF6F30] text-white hover:bg-[#FF8C59] "
-          >
-            Order Now
-          </Button>
+          <Link href="/orderNow">
+            <Button
+              size="lg"
+              className=" font-normal rounded-none px-6 py-6 bg-[#FF6F30] text-white hover:bg-[#FF8C59] "
+            >
+              Order Now
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

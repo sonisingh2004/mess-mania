@@ -21,7 +21,7 @@ const Header = () => {
               Menu
             </Link>
             <Link
-              href="/subscription-plans"
+              href="/subscription"
               className="text-gray-900 hover:text-[#FF6F30] transition-colors"
             >
               Subscription Plans

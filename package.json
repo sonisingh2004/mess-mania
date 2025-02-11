@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:generate": "drizzle-kit generate:pg",
-    "db:push": "drizzle-kit push:pg",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
     "predev": "if exist tailwind.config.js del tailwind.config.js && mklink tailwind.config.js tailwind.config.ts",
     "prebuild": "if exist tailwind.config.js del tailwind.config.js && mklink tailwind.config.js tailwind.config.ts",
     "shadcn": "copy tailwind.config.ts tailwind.config.js && pnpm dlx shadcn@latest add"

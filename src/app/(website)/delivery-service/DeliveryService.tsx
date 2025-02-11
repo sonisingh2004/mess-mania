@@ -6,10 +6,8 @@ import Link from 'next/link';
 
 const SketchUnderline = ({
   children,
-  className,
 }: {
   children: React.ReactNode;
-  className?: string;
 }) => {
   return (
     <span className="relative inline-block">

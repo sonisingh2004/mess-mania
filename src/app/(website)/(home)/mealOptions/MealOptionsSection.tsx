@@ -39,7 +39,7 @@ const MealOptionsSection = () => {
           <div className="w-[600px]">
             <p className="text-lg text-gray-700">
             Discover a wide range of delicious meals tailored to suit various dietary preferences. 
-            Whether you're looking for vegetarian, vegan, or gluten-free options, our menu has 
+            Whether you&apos;re looking for vegetarian, vegan, or gluten-free options, our menu has 
             something for everyone. Enjoy the convenience of home-cooked meals delivered right to 
             your doorstep, ensuring freshness and quality in every bite.
           </p>

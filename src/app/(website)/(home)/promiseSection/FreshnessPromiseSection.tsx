@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Leaf } from 'lucide-react';
+import Image from 'next/image';
 
 const FreshnessPromiseSection = () => {
   const features = [
@@ -24,11 +25,14 @@ const FreshnessPromiseSection = () => {
           <div className="relative ">
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                <img 
-                  src="/assets/home/fresh.jpg" 
-                  alt="Fresh ingredients on a wooden cutting board"
-                  className="w-full h-[621px] object-cover "
-                />
+                <div className="relative w-full h-[621px]">
+                  <Image 
+                    src="/assets/home/fresh.jpg" 
+                    alt="Fresh ingredients on a wooden cutting board"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>

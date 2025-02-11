@@ -21,7 +21,7 @@ const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({ isOpen, onC
     paymentMethod: ''
   });
 
-  const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -158,7 +158,7 @@ const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({ isOpen, onC
             </div>
             <h3 className="text-xl font-medium mb-2">Subscription Confirmed!</h3>
             <p className="text-gray-600 mb-4">
-              Thank you for subscribing to {selectedPlan?.name}. You'll receive a confirmation email shortly.
+              Thank you for subscribing to {selectedPlan?.name}. You&apos;ll receive a confirmation email shortly.
             </p>
             <button
               onClick={onClose}

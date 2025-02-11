@@ -11,9 +11,17 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 
+interface UserFormData {
+  name: string;
+  email: string;
+  phone: string;
+  vegetarian: boolean;
+  lowSpice: boolean;
+}
+
 const UserProfileForm = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const { register, handleSubmit } = useForm<UserFormData>();
+  const onSubmit = (data: UserFormData) => console.log(data);
 
   return (
     <Card className="w-[80vw]">

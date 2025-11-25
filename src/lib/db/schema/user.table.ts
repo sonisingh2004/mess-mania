@@ -1,5 +1,5 @@
-import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
-import { baseSqlSchema } from "./base.schema";
+import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import baseSqlSchema from "./base.schema";
 
 export const users = pgTable("users", {
   ...baseSqlSchema,
